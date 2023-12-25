@@ -1,0 +1,76 @@
+/* EditModal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Left-align labels and inputs */
+  .edit-form {
+    display: flex;
+    flex-direction: row; /* Display label and input in a row */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 15px; /* Increased space between lines */
+  }
+  
+  .edit-form label {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-right: 10px;
+    font-size:medium /* Space between label and input */
+  }
+  
+  .edit-form input {
+    flex: 1; /* Take remaining width */
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 8px;
+  }
+  
+  /* Right-align buttons */
+  .modal-content .edit-form {
+    display: flex;
+    justify-content: space-between; /* Space between label-input and buttons */
+    align-items: center; /* Align items vertically */
+    margin-top: 15px;
+  }
+  
+  .apply-button,
+  .close-modal-button {
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+
+.apply-button:hover,
+.close-modal-button:hover {
+  filter: brightness(80%); /* Reduce brightness on hover */
+  transition: filter 0.3s ease; /* Smooth transition effect */
+}
+  
+  .apply-button {
+    background-color: #007bff;
+  }
+  
+  .close-modal-button {
+    background-color: #dc3545;
+  }
+  

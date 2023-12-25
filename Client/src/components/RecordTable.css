@@ -1,0 +1,74 @@
+/* client/src/components/RecordsTable.css */
+.heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.records-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .record-box {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:#B9D9EB; /* Off white background color */
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px;
+    text-align: left;
+    position: relative; /* Right-align content */
+  }
+  
+  .record-content {
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+    margin-left:30px;
+  }
+
+  .record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    
+  }
+
+  .record-content pre {
+    margin-left: 40px;
+  }
+  
+  .delete-button {
+    background-color: #dc3545; /* Bootstrap red color for delete button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 40px; /* Adjust the top distance as needed */
+    right: 40px; /* Align the button to the right */
+  }
+
+  .edit-button {
+    background-color: #28a745; /* Bootstrap red color for delete button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 40px; /* Adjust the top distance as needed */
+    right: 120px;
+  }
+
+  .delete-button:hover,
+.edit-button:hover {
+  filter: brightness(80%); /* Reduce brightness on hover */
+  transition: filter 0.3s ease; /* Smooth transition effect */
+}
+
+  
+  
