@@ -7,13 +7,14 @@ const bodyParser = require('body-parser');
 const OpenAI = require('openai');
 const cors = require('cors');
 
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(cors());
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://Muskan:muskansingla@atlascluster.oqhfer1.mongodb.net/thaiapp?retryWrites=true&w=majority');
+mongoose.connect(process.env.MONGO_URI);
 
 const clients = [];
 app.get('/events', (req, res) => {
@@ -39,7 +40,7 @@ function sendSSEMessage(data) {
     });
   }
 
-const openai = new OpenAI({ apiKey: "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"});
+const openai = new OpenAI({ apiKey: process.env.OPEN_AI_API});
 const runPrompt = async (ocrText) => {
     const prompt = `
         Here is the ocr generated text of a Thai ID Card. Hence it contains both English and Thai characters.

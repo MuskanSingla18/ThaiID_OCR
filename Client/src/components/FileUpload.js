@@ -29,7 +29,7 @@ const FileUpload = ({ onUpload }) => {
         const base64Data = reader.result.split(',')[1];
         console.log(base64Data);
         // Call the Google Cloud Vision API for OCR
-        const apiKey = 'AIzaSyAZ-gIQVHvgeiXl8J9q1rGfd3dzRWtNSk4';//'AIzaSyDomoRZT6ZWL6Z7-TOxf7hBPCqznRQOYUI';
+        const apiKey = process.env.REACT_APP_GOOGLE_VISION_API;
         const apiUrl = 'https://vision.googleapis.com/v1/images:annotate?key=' + apiKey;
 
         const requestBody = {
