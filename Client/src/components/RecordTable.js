@@ -15,7 +15,7 @@ import EditModal from "../components/EditModal.js"
     useEffect(() => {
       const fetchRecords = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/data');
+          const response = await axios.get('https://thaiid-ocr.onrender.com/data');
 
           const activeRecords = response.data.filter((record) => record.status === "Valid" || record.status === "success");
             setRecords(activeRecords);
@@ -29,7 +29,7 @@ import EditModal from "../components/EditModal.js"
   
     // Set up Server-Sent Events (SSE)
     useEffect(() => {
-      const eventSource = new EventSource('http://localhost:5000/events');
+      const eventSource = new EventSource('https://thaiid-ocr.onrender.com/events');
   
       eventSource.onmessage = (event) => {
         const newRecord = JSON.parse(event.data);
@@ -48,11 +48,11 @@ import EditModal from "../components/EditModal.js"
   
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/data/${id}`);
+            await axios.delete(`https://thaiid-ocr.onrender.com/data/${id}`);
             
             const fetchRecords = async () => {
               try {
-                const response = await axios.get('http://localhost:5000/data');
+                const response = await axios.get('https://thaiid-ocr.onrender.com/data');
       
                 const activeRecords = response.data.filter((record) => record.status === "Valid" || record.status === "success");
                   setRecords(activeRecords);
@@ -95,7 +95,7 @@ import EditModal from "../components/EditModal.js"
     const handleApplyEdit = async () => {
         try {
             const updatedFields = { ...editedData }; // Copy editedData to avoid state mutation
-            const response = await axios.put(`http://localhost:5000/data/${editedId}`, updatedFields);
+            const response = await axios.put(`https://thaiid-ocr.onrender.com/data/${editedId}`, updatedFields);
       
             // Update the state with the updated record
             setRecords((prevRecords) =>
@@ -122,7 +122,7 @@ import EditModal from "../components/EditModal.js"
       setSelectedStatus(e.target.value);
       const fetchRecords = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/data/:selectedStatus');
+          const response = await axios.get('https://thaiid-ocr.onrender.com/data/:selectedStatus');
           setRecords(response.data);
         } catch (error) {
           console.error('Error fetching records:', error);

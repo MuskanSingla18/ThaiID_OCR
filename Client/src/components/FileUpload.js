@@ -66,7 +66,7 @@ const FileUpload = ({ onUpload }) => {
           const ocrText = result.responses[0]?.fullTextAnnotation?.text || '';
           
           try {
-            const axiosResponse = await axios.post('http://localhost:5000/data', { ocrText });
+            const axiosResponse = await axios.post('https://thaiid-ocr.onrender.com/data', { ocrText });
             console.log('OCR Text sent to server successfully');
             setUploadStatus('Record has been successfully added!!');
             setInsertedRecord(axiosResponse.data);
