@@ -1,0 +1,1 @@
+# ThaiID_OCR
