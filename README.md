@@ -7,7 +7,7 @@ This project is a web application for OCR (Optical Character Recognition) scanni
 Server/ Backend created using Node.js is hoisted on Render.
 Client/ Frontend created using React.js is hoisted using Vercel.
 
-[Live Website](https://thai-id-cxpg6fl3u-muskansingla18.vercel.app/)
+[Live Website](https://thai-id-ocr-alpha.vercel.app/)
 
 
 ## Table of Contents
